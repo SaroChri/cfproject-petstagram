@@ -1,5 +1,5 @@
 # cfproject-petstagram
-A project for pet adoptions
+<b>A project for pet adoptions</b>
 
 <ul>Technologies used:
 <li>Spring Boot</li>
