@@ -1,0 +1,93 @@
+.container {
+    height: 850px;
+    width: 1000px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(237, 211, 193)
+}
+
+.header{
+    height: 125px;
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    font-family: 'Fuzzy Bubbles', cursive;
+    background-color:  rgb(206,106,38);
+}
+.headtxt{
+    margin-right: 50px;
+}
+
+
+.main {
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: larger;
+    color: rgb(206, 106, 38);
+}
+.Main1{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.Main2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background-color: rgb(68,102,101);
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    height: 155px;
+    width: auto;
+}
+
+ul > li {
+    list-style:none;
+    margin-top:30px;
+    margin-right:20px;
+    color: rgb(206, 106, 38);
+}
+
+h3 {
+    background-color: rgb(68,102,101);
+    text-align: center;
+}
+span{
+    color: red;
+}
+
+
+.Footer {
+    height: 125px;
+    width: 1000px;
+    background-color: rgb(206,106,38);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    margin-top: 20px;
+}
+
+
+.follow{
+    font-size: large;
+    font-family: 'Fuzzy Bubbles', cursive;
+    color:rgb(68,102,101);
+    margin-right: 30px;
+
+}

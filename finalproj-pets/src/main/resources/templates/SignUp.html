@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/SignUp.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>UserSignUp</title>
+
+</head>
+<body>
+
+<div class="container">
+
+    <!--Header-->
+
+    <div class="header">
+
+    </div>
+
+    <div class="main">
+
+        <div class="formsign">
+
+            <div class="form1">
+
+                <form>
+                        <label for="firstname">Firstname </label>
+                        <label for="lastname">Lastname </label>
+                        <label  for="city"> City </label>
+                        <label  for="country">Country</label>
+                        <label  for="email"> E-mail</label>
+                        <label  for="username"> Username</label>
+                        <label  for="password"> Password</label>
+                        <label  for="confirmpassword"> Confirm Password</label>
+                </form>
+
+            </div>
+
+
+
+            <form action="#" th:action="@{/SignUp}" th:object="${userDTO}" method="post">
+
+                <div class="inputs">
+                    <input type="text" id="firstname" placeholder="firstname" th:field="*{firstname}">
+                    <input type="text" id="lastname" placeholder="lastname" th:field="*{lastname}">
+                    <input type="text" id="city" placeholder="city" th:field="*{city}">
+                    <input type="text" id="country" placeholder="country" th:field="*{country}">
+                    <input type="email" id="email" placeholder="email" th:field="*{email}">
+                    <input type="text" id="username" placeholder="username" th:field="*{username}">
+                    <input type="password" id="password" placeholder="password" th:field="*{password}">
+                    <input type="password" id="confirmpassword" placeholder="confirm password" th:field="*{confirmPassword}">
+
+                    <button type="submit">Submit</button>
+                </div>
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+    <!--Footer-->
+    <div class="footer">
+
+
+        <div class="content">
+                    <span class="follow">Follow us
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    </span>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+.container {
+    height: 850px;
+    width: 1000px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(237, 211, 193)
+}
+
+.header{
+    height: 125px;
+    width: 1000px;
+    background-color:  rgb(206,106,38);;
+}
+
+
+.home{
+    height: 70px;
+    width: 70px;
+    margin-left: 40px;
+    margin-top: 15px;
+}
+
+.hometxt{
+    display: flex;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 53px;
+    font-weight: bold;
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: medium;
+    color: rgb(68,102,101);
+}
+
+.main{
+    height: 800px;
+    width: 800px;
+    color: rgb(206,106,38);
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: large;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    line-height: 0;
+}
+
+.main img {
+    width: 200px;
+    height: 300px;
+    display: flex;
+    object-fit: contain;
+    flex-direction: column;
+    align-content: center;
+    align-self: center;
+}
+
+
+.main p {
+    font-weight: bold;
+}
+
+.main span {
+    font-weight: normal;
+    color: rgb(68,102,101);
+}
+
+.main h2 span {
+    text-decoration: underline;
+    font-weight: bolder;
+    color: rgb(206,106,38);
+}
+
+button{
+    border-radius: 20px;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    font-size: medium;
+    align-items: center;
+    color: white;
+    background-color: rgb(206,106,38);
+    border: none;
+    font-family: 'Fuzzy Bubbles', cursive;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    margin-top: 40px;
+
+}
+
+
+.footer {
+    height: 125px;
+    width: 1000px;
+    background-color: rgb(206,106,38);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    margin-top: 20px;
+}
+
+
+.follow{
+    font-size: large;
+    font-family: 'Fuzzy Bubbles', cursive;
+    color:rgb(68,102,101);
+    margin-right: 30px;
+
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/PetProfile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>PetProfile</title>
+</head>
+<body>
+
+<div class="container">
+
+    <!--Header-->
+    <div class="header">
+
+        <span class="hometxt"><a href ="/templates/main.html">Home</a></span>
+        <img class = "home" src="../static/images/lovepik-pet-dog-ass-png-image_401706063_wh1200.png" alt="">
+
+    </div>
+
+    <!--Main-->
+    <div class="main">
+
+        <img  th:src="@{/images/uploads/{imageName}(imageName=${pet.name + '.jpg'})}" alt="img">
+
+        <h2 ><span class="title" th:text="${pet.name} + ', ' + ${pet.kind} + ', ' +${pet.age} + ' ' + ${pet.yearMonth}"></span>(s) old </h2>
+        <p>Gender: <span th:text="${pet.gender}"></span> , Breed: <span th:text="${pet.breed}"></span></p>
+        <p>Neutered: <span th:text="${pet.neutered}"> </span> , Vaccinated: <span th:text="${pet.vaccinated}"></span></p>
+        <p>Medical History : <span th:text="${pet.illness}"></span></p>
+        <button type="button"><a href="/Adopted">Request for adoption</a></button>
+
+    </div>
+
+    <!--Footer-->
+    <div class="footer">
+
+
+        <div class="content">
+                    <span class="follow">Follow us
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    </span>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

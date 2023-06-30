@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/AdoptAPet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>AdoptAPet</title>
+</head>
+<body>
+
+<div class="container">
+
+    <!--Header-->
+    <div class="header">
+
+    </div>
+
+    <!--Main-->
+    <div class="main">
+        <div class="pet-list">
+            <div class="grid-container">
+
+                <div th:each="pet : ${pets}"  class="grid-item">
+                    <a th:href="@{/pet/{id}(id=${pet.id})}" class="pet-name">
+                        <img th:if="${pet.id}" th:src="@{/images/uploads/{imageName}(imageName=${pet.name + '.jpg'})}" alt="img">
+                    <span th:text="${pet.name}"></span>
+                    </a>
+                    <p>Kind: <span th:text="${pet.kind}"></span></p>
+                    <p>Gender: <span th:text="${pet.gender}"></span></p>
+                    <p>
+                        Age:
+                        <span th:text="${pet.age} + ' ' + ${pet.yearMonth}"></span>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <div class="footer">
+
+
+        <div class="content">
+                    <span class="follow">Follow us
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    </span>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

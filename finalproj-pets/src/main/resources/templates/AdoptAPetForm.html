@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/AdoptAPetForm.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>AdoptionUpload</title>
+</head>
+<body>
+
+<div class="container">
+
+    <!--Header-->
+    <div class="header"></div>
+
+    <div class="main">
+
+        <div class="formsign">
+
+            <div class="form1">
+
+                <span>
+
+                        <label>Name </label>
+                        <label>Gender</label>
+                        <label> Age</label>
+                        <label>Year/Month</label>
+                        <label>Kind</label>
+                        <label>Breed</label>
+                        <label>Neutered</label>
+                        <label>Vaccinated</label>
+                        <label>illness</label>
+                        <label>Image</label>
+
+                </span>
+
+            </div>
+
+            <div class="inputs">
+
+            <form id="form3"  th:action="@{/AdoptAPetForm}"  th:object="${petsDTO}" method="post" enctype="multipart/form-data">
+
+                    <input type="text" id="name" placeholder="Name" th:field="*{name}">
+                        <select  id="Gender" th:field="*{gender}">
+                            <option th:value="Female">Female</option>
+                            <option th:value="Male">Male</option>
+                        </select>
+                    <input type="text" id="age" placeholder="age" th:field="*{age}">
+
+                    <select  id="YearMonth" th:field="*{yearMonth}">
+                        <option th:value="Year">Year(s)</option>
+                        <option th:value="Month">Month(s)</option>
+                    </select>
+
+                    <select id="Kind" th:field="*{kind}">
+                        <option th:value="Cat">Cat</option>
+                        <option th:value="Dog">Dog</option>
+                        <option th:value="Bunny">Bunny</option>
+                        <option th:value="Bird">Bird</option>
+                        <option th:value="Other">Other</option>
+                    </select>
+                        <input type="text" id="breed" placeholder="Breed" th:field="*{breed}">
+                        <select id="neutered" th:field="*{neutered}">
+                            <option th:value="Yes">Yes</option>
+                            <option th:value="No">No</option>
+                        </select>
+                        <select id="vaccinated" th:field="*{vaccinated}">
+                            <option th:value="Yes">Yes</option>
+                            <option th:value="No">No</option>
+                        </select>
+                        <input type="text" id="illness" placeholder="any illness" th:field="*{illness}">
+                        <input id="image" type="file" name="image" accept="image/*">
+
+                        <button type="submit" id="submitBtn">Submit</button>
+
+            </form>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!--Footer-->
+    <div class="footer">
+
+
+        <div class="content">
+                    <span class="follow">Follow us
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    </span>
+        </div>
+
+    </div>
+    </div>
+
+</body>
+</html>

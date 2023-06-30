@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>MainPage</title>
+
+</head>
+<body>
+
+<div class="container">
+
+    <!--Header-->
+
+    <div class="header">
+<!--        <a href="/DelUsers" class="headtxt">Delete my Account</a>-->
+        <a href="/logout" class="headtxt" >Logout</a>
+    </div>
+
+
+    <div class="main">
+
+
+        <!--Main-->
+        <div class="Main1">
+            <div class="Adoptions">
+                <ul><h3> Adoptions </h3>
+                    <li> <i class="fa-solid fa-paw"></i> <a href="./AdoptAPet">Adopt a pet</a> </li>
+                    <li> <i class="fa-solid fa-paw"></i> <a href="/AdoptAPetForm">Add a pet for adoption</a></li>
+                </ul>
+            </div>
+            <div class="PetSitting">
+                <ul><h3>Pet Sitters</h3>
+                    <li><i class="fa-solid fa-paw"></i>Find a pet sitter</li>
+                    <li><i class="fa-solid fa-paw"></i>Add a pet sitter</li>
+                </ul>
+            </div>
+            <div class="Merch">
+                <ul><h3>Merchandise</h3>
+                    <li><i class="fa-solid fa-paw"></i>Browse our merchandise</li>
+                    <li><i class="fa-solid fa-paw"></i>Add an item for sale</li>
+                    <li><i class="fa-solid fa-paw"></i>Add an item to give away</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="Main2">
+            <div class="box">
+    <span>!vet emergency phones <span th:text="${dateTxt}"></span>
+    <ul>
+        <li> Dr Mewler         6988332211</li>
+        <li> Dr Kaldog         6999332244</li>
+
+    </ul>
+            <img src="../static/images/Main/pets.png">
+    </span>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!--Footer-->
+
+    <div class="Footer">
+    <span class="follow">Find us
+    <i class="fa-brands fa-square-facebook"></i>
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-twitter"></i>
+</span>
+    </div>
+
+</div>
+</body>
+</html>

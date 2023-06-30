@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/css/loginpage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
+
+    <title>LoginPage</title>
+</head>
+<body>
+
+<div class="container">
+
+
+    <form action="/login" method="post">
+
+        <div class="usernamelog">
+            <img src="../static/images/loginpg/paw.webp" class="thumbnail" alt="">
+            <input type ="text" name="username" id="username" placeholder="username">
+
+        </div>
+
+        <div class="passwordlog">
+            <img src="../static/images/loginpg/paw.webp" class="thumbnail" alt="">
+            <input type="password" name="password" id="password" placeholder="password">
+
+        </div>
+
+        <div class="house">
+            <img src="../static/images/loginpg/house.png" class="home" alt="">
+            <button type="submit">Enter</button>
+        </div>
+    </form>
+        <div> <span class="signUp">Don't have an account? Sign up <a href="/SignUp">here</a> ! </span></div>
+
+
+</div>
+
+</body>
+</html>
