@@ -49,6 +49,8 @@ public interface IUserService  {
      * @param username
      * @return true if the username already exists
      */
-    boolean usernameAlreadyExists(String username);
+    boolean usernameAlreadyExists(String username, String currentUsername);
+
+
 
 }

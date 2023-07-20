@@ -115,9 +115,11 @@ public class UserServiceImpl implements IUserService {
      * @return true if the username already exists, false otherwise
      */
     @Override
-    public boolean usernameAlreadyExists(String username) {
+    public boolean usernameAlreadyExists(String username, String currentUsername) {
 
-        return userRepository.UsernameExists(username);
+        User user = userRepository.findByUsername(username);
+        if (user == null) return false;
+        return !user.getUsername().equals(currentUsername);
     }
     /**
      * Converts a UserDTO object to a User object.

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../static/css/deleteAccount.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>Delete Account</title>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="main">
+
+<h1>Delete Account</h1>
+
+    <form th:action="@{/users/delete}" method="post">
+      <input type="hidden" name="id" th:value="${user.id}" /> <!-- Access the user's ID directly -->
+      <p>Are you sure you want to delete your account?</p>
+      <div class="btn">
+      <button type="submit">Delete</button>
+      <button><a th:href="@{/login}">Cancel</a></button>
+      </div>
+
+
+    </form>
+
+  </div>
+</div>
+
+
+</body>
+</html>

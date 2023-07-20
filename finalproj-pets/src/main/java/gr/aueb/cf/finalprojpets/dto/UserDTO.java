@@ -19,21 +19,23 @@ public class UserDTO {
     private String country;
     private String email;
     private String username;
-    @Size(min = 8, message = "Password must have at least ${min} characters")
-    @Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?\\d).*$")
+
     private String password;
 
-    @NotEmpty
-    private String confirmPassword;
 
-    public UserDTO(Long id, String username, String password, String firstname, String lastname, String city, String country, String email) {
+    private String confirmPassword;
+    private String newPassword;
+    private String confirmNewPassword;
+
+    public UserDTO(Long id, String firstname, String lastname, String city, String country, String email, String username, String password, String newPassword) {
         this.id = id;
-        this.username = username;
-        this.password = password;
         this.firstname = firstname;
         this.lastname = lastname;
         this.city = city;
         this.country = country;
         this.email = email;
+        this.username = username;
+        this.password = password;
+        this.newPassword = newPassword;
     }
 }
