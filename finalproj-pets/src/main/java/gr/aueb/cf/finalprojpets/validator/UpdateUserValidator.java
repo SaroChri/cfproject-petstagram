@@ -1,11 +1,14 @@
 package gr.aueb.cf.finalprojpets.validator;
 
 import gr.aueb.cf.finalprojpets.dto.UserDTO;
+import gr.aueb.cf.finalprojpets.model.User;
+import gr.aueb.cf.finalprojpets.repository.UserRepository;
 import gr.aueb.cf.finalprojpets.service.IUserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
@@ -18,10 +21,14 @@ import java.util.Objects;
 public class UpdateUserValidator implements Validator {
 
     private final IUserService userService;
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    public UpdateUserValidator(IUserService userService) {
+    public UpdateUserValidator(IUserService userService, UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userService = userService;
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -31,7 +38,9 @@ public class UpdateUserValidator implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
+
         UserDTO userDTO = (UserDTO) target;
+
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentUsername = authentication.getName();
 
@@ -45,6 +54,15 @@ public class UpdateUserValidator implements Validator {
 
         // Password validation for the update operation
         if (StringUtils.isNotBlank(userDTO.getNewPassword())) {
+            // Require the old password if the new password is provided
+            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "empty");
+
+            // Check the old password only if the new password is not empty
+            User user = userRepository.findByUsername(currentUsername);
+            if (!passwordEncoder.matches(userDTO.getPassword(), user.getPassword())) {
+                errors.rejectValue("password", "incorrect");
+            }
+
             if (userDTO.getNewPassword().length() < 8 || userDTO.getNewPassword().length() > 30) {
                 errors.rejectValue("newPassword", "size");
             }
@@ -55,10 +73,4 @@ public class UpdateUserValidator implements Validator {
         }
     }
 
-//    public boolean isOldPasswordValid(String oldPassword) {
-//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//        String currentUsername = authentication.getName();
-//        UserDTO currentUser = userService.findByUsername(currentUsername);
-//        return passwordEncoder.matches(oldPassword, currentUser.getPassword());
-//    }
 }

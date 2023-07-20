@@ -78,6 +78,10 @@ public class UpdateUserController {
         user.setEmail(userDTO.getEmail());
         user.setUsername(userDTO.getUsername());
 
+        // Update the authentication with the new username
+        Authentication newAuth = new UsernamePasswordAuthenticationToken(user.getUsername(), userDTO.getNewPassword(), authentication.getAuthorities());
+        SecurityContextHolder.getContext().setAuthentication(newAuth);
+
         // Update the password only if the new password is provided and matches the confirmed new password
         if (userDTO.getNewPassword() != null && !userDTO.getNewPassword().isEmpty() &&
                 userDTO.getNewPassword().equals(userDTO.getConfirmNewPassword())) {
